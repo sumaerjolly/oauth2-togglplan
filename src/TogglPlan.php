@@ -7,6 +7,7 @@ use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 use Psr\Http\Message\ResponseInterface;
 use Sumaerjolly\OAuth2\Client\Provider\TogglPlanUser;
+use League\OAuth2\Client\OptionProvider\HttpBasicAuthOptionProvider;
 
 class TogglPlan extends AbstractProvider
 {
@@ -26,6 +27,8 @@ class TogglPlan extends AbstractProvider
   public function __construct(array $options = [], array $collaborators = [])
   {
     parent::__construct($options, $collaborators);
+
+    $this->setOptionProvider(new HttpBasicAuthOptionProvider());
   }
 
   public function getBaseAuthorizationUrl()
