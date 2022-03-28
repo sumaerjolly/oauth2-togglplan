@@ -30,7 +30,7 @@ class TogglPlan extends AbstractProvider
 
   public function getBaseAuthorizationUrl()
   {
-    return 'https://plan.toggl.com/oauth/authorize';
+    return 'https://plan.toggl.com/oauth/login';
   }
 
   public function getBaseAccessTokenUrl(array $params)
